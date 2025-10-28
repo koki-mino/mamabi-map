@@ -1,0 +1,24 @@
+/* 追加の素朴な調整（Tailwindの上に被せる） */
+html, body { min-height: 100%; }
+
+/* Map：固定にするなら 420px でOK。流体なら以下を推奨 */
+#map {
+  height: min(65svh, 560px);
+  min-height: 320px;
+  /* 固定にしたい場合は上を消して次を使う：
+  height: 420px;
+  */
+}
+
+/* details/summary のアクセシビリティ配慮 */
+details > summary { cursor: pointer; }
+details > summary:focus { outline: none; }
+details > summary:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+  border-radius: .5rem;
+}
+
+/* 必要に応じて：summary のデフォルト三角マーカーを消す
+summary::-webkit-details-marker { display: none; }
+*/
