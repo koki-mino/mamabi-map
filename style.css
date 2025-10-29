@@ -22,3 +22,37 @@ details > summary:focus-visible {
 /* 必要に応じて：summary のデフォルト三角マーカーを消す
 summary::-webkit-details-marker { display: none; }
 */
+
+/* やわらかい影と角丸の統一感 */
+.shadow-soft { box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+.rounded-2xl { border-radius: 1rem; }
+
+/* テーマ表示チップ */
+.chip {
+  display:inline-block; font-size:12px; line-height:1; padding:.4rem .6rem;
+  border-radius:9999px; background:#EEF2FF; color:#3730A3; /* indigo系 */
+  border:1px solid #E0E7FF; margin-right:.375rem;
+}
+
+/* ステータス丸バッジの質感アップ */
+.badge {
+  border:1px solid rgba(0,0,0,.06);
+  box-shadow:0 1px 0 rgba(255,255,255,.6) inset;
+}
+
+/* Leaflet のタイルをほんの少しだけ整える（コントラスト微調整） */
+.leaflet-tile { filter: saturate(0.95) contrast(1.02); }
+
+/* カスタムマーカー用（下の④とセット） */
+.spot-marker .pin {
+  position:relative; width:28px; height:28px; border-radius:9999px;
+  background:#111827; color:#fff; display:grid; place-items:center;
+  box-shadow:0 6px 16px rgba(17,24,39,.22), 0 1px 0 rgba(255,255,255,.3) inset;
+  border:1px solid rgba(255,255,255,.2);
+}
+.spot-marker .pin::after{
+  content:""; position:absolute; bottom:-6px; left:50%; transform:translateX(-50%);
+  width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; border-top:7px solid #111827;
+}
+.spot-marker .pin--done { background:#059669; }    /* emerald-600 */
+.spot-marker .pin--todo { background:#6366F1; }    /* indigo-500 */
